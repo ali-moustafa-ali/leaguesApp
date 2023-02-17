@@ -20,7 +20,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A0F8E2D2-298A-4AAC-A96D-8A710776B1CE - 2227e95b1d77c4e5"
+                  uuid = "A0F8E2D2-298A-4AAC-A96D-8A710776B1CE - 2227e95b1d77c4ca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/alimoustafa/Desktop/finalapp/leaguesApp/sportApp/leaguesViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
                   offsetFromSymbolStart = "168">
                </Location>
                <Location
-                  uuid = "A0F8E2D2-298A-4AAC-A96D-8A710776B1CE - f26a656dafaa00c"
+                  uuid = "A0F8E2D2-298A-4AAC-A96D-8A710776B1CE - f26a656dafaa06d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,8 +45,8 @@
                   urlString = "file:///Users/alimoustafa/Desktop/finalapp/leaguesApp/sportApp/leaguesViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
                   offsetFromSymbolStart = "88">
                </Location>
             </Locations>
@@ -68,7 +68,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EFC7C9C7-29E6-420B-94A1-588F00B34C6F - 3207c4aaac10b8a2"
+                  uuid = "EFC7C9C7-29E6-420B-94A1-588F00B34C6F - 3207c4aaac10b943"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -78,12 +78,12 @@
                   urlString = "file:///Users/alimoustafa/Desktop/finalapp/leaguesApp/sportApp/leaguesViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
                   offsetFromSymbolStart = "956">
                </Location>
                <Location
-                  uuid = "EFC7C9C7-29E6-420B-94A1-588F00B34C6F - 2227e95b1d77c4e5"
+                  uuid = "EFC7C9C7-29E6-420B-94A1-588F00B34C6F - 2227e95b1d77c4ca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -93,43 +93,11 @@
                   urlString = "file:///Users/alimoustafa/Desktop/finalapp/leaguesApp/sportApp/leaguesViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
                   offsetFromSymbolStart = "168">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "62191B4F-D7E2-43B0-A4D6-46461838A173"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sportApp/leaguesViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "fetchData(compilation:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4A0C0EB3-F6D9-4398-BE99-B869835F9ACA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "sportApp/leaguesViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "fetchData(compilation:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

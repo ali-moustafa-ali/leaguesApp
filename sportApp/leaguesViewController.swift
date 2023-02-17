@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-
+import Alamofire
+import Kingfisher
 class leaguesViewController: UIViewController
 {
     //variable to response data
@@ -54,8 +54,37 @@ extension leaguesViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = leaguesTabelView.dequeueReusableCell(withIdentifier: "leaguesCell") as! leaguesTableViewCell
         let leagues =  data?.result[indexPath.row]
         cell.leaguesName.text = leagues?.league_name
-        cell.leaguesImage.image = UIImage(named: "1")
-        //make the cell look round
+        //MARK: - predicate
+        let string = leagues?.league_logo
+        let predicate = NSPredicate(format:"SELF ENDSWITH[c] %@", ".png")
+        let result = predicate.evaluate(with: string)
+//        print(result) // true
+        
+        //MARK: - kingfisher
+        if result{
+            let url = URL(string: (leagues?.league_logo)!)
+             cell.leaguesImage.kf.setImage(with: url)
+            
+        }else
+        {
+            
+            switch sportType {
+            case "football":
+                cell.leaguesImage.image = UIImage(named: "1")
+            case "basketball":
+                cell.leaguesImage.image = UIImage(named: "2")
+            case "cricket":
+                cell.leaguesImage.image = UIImage(named: "3")
+            case "tennis":
+                cell.leaguesImage.image = UIImage(named: "4")
+            default:
+                break
+            }
+            
+            
+        }
+       
+        //MARK: - make the cell look round
         cell.leaguesView.layer.cornerRadius = cell.contentView.frame.height / 2.5
         //make the image look round
         cell.leaguesImage.layer.cornerRadius = cell.leaguesImage.frame.height / 2.5
@@ -72,43 +101,72 @@ extension leaguesViewController: UITableViewDataSource, UITableViewDelegate{
 
 //fetch the data
 extension leaguesViewController{
-    
-    func fetchData(compilation:@escaping (LeaguesResponse?)->Void){
-        
-        let baseURL = "https://apiv2.allsportsapi.com"
-        let apiKey = "ed1c5c7c52b5fe5d2d9330d77e933c2718b6f8399bc960f0d2be45c42f016d9c"
-        let metParam = "Leagues"
-        let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)"
+    //MARK: - Alamofire
+    func fetchData(compilation: @escaping (LeaguesResponse?) -> Void)
+    {
+            
+            let baseURL = "https://apiv2.allsportsapi.com"
+            let apiKey = "ed1c5c7c52b5fe5d2d9330d77e933c2718b6f8399bc960f0d2be45c42f016d9c"
+            let metParam = "Leagues"
+            let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)"
+          
+            AF.request(urlString).response
+        { response in
+                if let data = response.data {
+                    do{
+                        let result = try JSONDecoder().decode(LeaguesResponse.self, from: data)
+                        compilation(result)
+                    }
+                    catch{
+                        compilation(nil)
+                    }
+                } else {
+                    compilation(nil)
+                }
+            }
+        }
 
+//MARK: - URLSession
+    /*
+     func fetchData(compilation:@escaping (LeaguesResponse?)->Void){
+         
+         let baseURL = "https://apiv2.allsportsapi.com"
+         let apiKey = "ed1c5c7c52b5fe5d2d9330d77e933c2718b6f8399bc960f0d2be45c42f016d9c"
+         let metParam = "Leagues"
+         let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)"
+
+       
+         
+         guard let url = URL(string: urlString) else {
+             print("Invalid URL")
+             return
+         }
+         
+         
+ //        URLSession
+         let req = URLRequest(url: url)
+         let session = URLSession(configuration: URLSessionConfiguration.default)
+         let task =  session.dataTask(with: req) { Data, URLResponse, Error in
+            
+             //code
       
-        
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL")
-            return
-        }
-        
-        
-//        URLSession
-        let req = URLRequest(url: url)
-        let session = URLSession(configuration: URLSessionConfiguration.default)
-        let task =  session.dataTask(with: req) { Data, URLResponse, Error in
-            
-            //code
-     
-            do{
-                let result = try JSONDecoder().decode(LeaguesResponse.self, from: Data!)
-                
-                
-                compilation(result)
-            }
-            catch{
-                compilation(nil)
-            }
-            
-        }
-        
-        task.resume()
-    }
+             do{
+                 let result = try JSONDecoder().decode(LeaguesResponse.self, from: Data!)
+                 
+                 
+                 compilation(result)
+             }
+             catch{
+                 compilation(nil)
+             }
+             
+         }
+         
+         task.resume()
+     }
+     */
+    
+    
 }
 
 

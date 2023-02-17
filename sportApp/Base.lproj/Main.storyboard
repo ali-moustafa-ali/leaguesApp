@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wb3-eJ-LVD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hj7-Hj-k3B">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -107,23 +107,23 @@
                                                     <rect key="frame" x="20" y="11" width="353" height="78"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="pZQ-e5-WUD">
-                                                            <rect key="frame" x="0.0" y="9" width="60" height="60"/>
+                                                            <rect key="frame" x="10" y="9" width="60" height="60"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="iIF-T1-Gnc"/>
                                                                 <constraint firstAttribute="height" constant="60" id="vuI-sM-p6p"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="leagues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bme-jn-eVq">
-                                                            <rect key="frame" x="70" y="10" width="273" height="58"/>
+                                                            <rect key="frame" x="80" y="10" width="263" height="58"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="Bme-jn-eVq" secondAttribute="bottom" constant="10" id="4nQ-mb-sp8"/>
-                                                        <constraint firstItem="pZQ-e5-WUD" firstAttribute="leading" secondItem="FUF-Qj-hO4" secondAttribute="leading" id="Geo-4P-ie2"/>
+                                                        <constraint firstItem="pZQ-e5-WUD" firstAttribute="leading" secondItem="FUF-Qj-hO4" secondAttribute="leading" constant="10" id="Geo-4P-ie2"/>
                                                         <constraint firstItem="pZQ-e5-WUD" firstAttribute="centerY" secondItem="FUF-Qj-hO4" secondAttribute="centerY" id="L5K-Ak-N5J"/>
                                                         <constraint firstItem="Bme-jn-eVq" firstAttribute="top" secondItem="FUF-Qj-hO4" secondAttribute="top" constant="10" id="Vhg-Gg-Zep"/>
                                                         <constraint firstAttribute="trailing" secondItem="Bme-jn-eVq" secondAttribute="trailing" constant="10" id="tRV-8k-oRW"/>
@@ -188,8 +188,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -62,13 +62,25 @@ class ViewController: UIViewController,UICollectionViewDataSource,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            print("Football")
+            print("football")
+            let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "leaguesViewController") as! leaguesViewController
+            storyBoard.sportType = "football"
+            self.navigationController?.pushViewController(storyBoard, animated: true)
         case 1:
-            print("BasketBall")
+            print("basketball")
+            let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "leaguesViewController") as! leaguesViewController
+            storyBoard.sportType = "basketball"
+            self.navigationController?.pushViewController(storyBoard, animated: true)
         case 2:
-            print("Cricket")
+            print("cricket")
+            let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "leaguesViewController") as! leaguesViewController
+            storyBoard.sportType = "cricket"
+            self.navigationController?.pushViewController(storyBoard, animated: true)
         case 3:
-            print("Tennis")
+            print("tennis")
+            let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "leaguesViewController") as! leaguesViewController
+            storyBoard.sportType = "tennis"
+            self.navigationController?.pushViewController(storyBoard, animated: true)
         default:
             break
         }

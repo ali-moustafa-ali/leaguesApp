@@ -110,6 +110,7 @@ extension leaguesViewController{
             let metParam = "Leagues"
             let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)"
           
+        
             AF.request(urlString).response
         { response in
                 if let data = response.data {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wb3-eJ-LVD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KzM-a1-XJN">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -164,6 +164,79 @@
             </objects>
             <point key="canvasLocation" x="1855.7251908396945" y="2.8169014084507045"/>
         </scene>
+        <!--League Details View Controller-->
+        <scene sceneID="58k-HC-MZ2">
+            <objects>
+                <viewController id="vb5-h0-ZEh" customClass="LeagueDetailsViewController" customModule="sportApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="euh-fA-mMy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hb3-KG-8a6">
+                                <rect key="frame" x="0.0" y="534" width="393" height="284"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jN8-Co-VGA">
+                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamsCell" id="SAF-TJ-MCy" customClass="TeamsCellCollectionViewCell" customModule="sportApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5" width="120" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NHs-qg-F4c">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="VM8-Su-qI6">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="JEN-gr-J8g"/>
+                                                        <constraint firstAttribute="height" constant="120" id="t2Y-MU-sY4"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VM8-Su-qI6" firstAttribute="centerX" secondItem="NHs-qg-F4c" secondAttribute="centerX" id="tyS-w8-S9I"/>
+                                                <constraint firstItem="VM8-Su-qI6" firstAttribute="centerY" secondItem="NHs-qg-F4c" secondAttribute="centerY" id="ygF-Nh-ymy"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="teamImage" destination="VM8-Su-qI6" id="ihs-gh-Ops"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11W-3k-dUL">
+                                <rect key="frame" x="161.66666666666666" y="486" width="70" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Pie-fe-ht9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VqH-YO-Ruz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VqH-YO-Ruz" firstAttribute="bottom" secondItem="Hb3-KG-8a6" secondAttribute="bottom" id="58j-vq-Uxa"/>
+                            <constraint firstItem="VqH-YO-Ruz" firstAttribute="trailing" secondItem="Hb3-KG-8a6" secondAttribute="trailing" id="8Nm-G1-NJi"/>
+                            <constraint firstItem="Hb3-KG-8a6" firstAttribute="height" secondItem="euh-fA-mMy" secondAttribute="height" multiplier="1:3" id="Bvv-Fe-MHg"/>
+                            <constraint firstItem="11W-3k-dUL" firstAttribute="centerX" secondItem="euh-fA-mMy" secondAttribute="centerX" id="L2C-oP-EdQ"/>
+                            <constraint firstItem="Hb3-KG-8a6" firstAttribute="top" secondItem="11W-3k-dUL" secondAttribute="bottom" constant="19" id="eer-y6-KNX"/>
+                            <constraint firstItem="Hb3-KG-8a6" firstAttribute="leading" secondItem="VqH-YO-Ruz" secondAttribute="leading" id="vUu-rb-Scq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TeamsCollection" destination="Hb3-KG-8a6" id="Wkp-0W-h5A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQu-1G-6YW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2716.7938931297708" y="23.943661971830988"/>
+        </scene>
         <!--Launch Screen View Controller-->
         <scene sceneID="EGx-S3-2Sf">
             <objects>
@@ -182,8 +255,7 @@
         <!--Navigation Controller-->
         <scene sceneID="SVp-zb-hDF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YFm-fc-A7Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wb3-eJ-LVD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Wb3-eJ-LVD" customClass="NavigationController" customModule="sportApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Xc-5e-MgZ">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -194,6 +266,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="u9R-QM-9g1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFm-fc-A7Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>

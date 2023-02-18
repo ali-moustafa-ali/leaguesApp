@@ -14,16 +14,25 @@ import Alamofire
 class LeagueDetailsViewController: UIViewController
 {
     
-    /*
+   
     //variable to response data
     var data : DetailsResponse?
+    var arrayOfTeams = [teamss]()
     var sportType = ""
     @IBOutlet weak var TeamsCollection: UICollectionView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //        TeamsCollection.dataSource = self
-        //        TeamsCollection.delegate = self
+        
+       
+        
+        
+                TeamsCollection.dataSource = self
+                TeamsCollection.delegate = self
+        arrayOfTeams.append(teamss(photo: UIImage(named: "1")!))
+        arrayOfTeams.append(teamss(photo: UIImage(named: "1")!))
+        arrayOfTeams.append(teamss(photo: UIImage(named: "1")!))
+        arrayOfTeams.append(teamss(photo: UIImage(named: "1")!))
         
         //fetch data
         fetchData { result in
@@ -43,11 +52,17 @@ class LeagueDetailsViewController: UIViewController
 {
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            <#code#>
+            arrayOfTeams.count
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            <#code#>
+            let cell = TeamsCollection.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCellCollectionViewCell
+            let team = arrayOfTeams[indexPath.row]
+            cell.setupCellforteams(photo: team.photo)
+            cell.backgroundColor = UIColor .red
+            return cell
+            
+            
         }
         
     }
@@ -87,9 +102,12 @@ extension LeagueDetailsViewController{
         }
     }
     
-     */
+    
 }
 
+struct teamss{
+    let photo:UIImage
+}
 
 
 

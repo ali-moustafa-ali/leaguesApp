@@ -23,19 +23,6 @@ class LaunchScreenViewController: UIViewController {
                     }
         }
             
-    
-        
-//        UIView.animate(withDuration: 2, animations: {
-//            self.setupAnimations(completion: <#() -> ()#>)
-//
-//        }) { done in
-//            let vc = self.storyboard?.instantiateViewController(identifier: "HomeVC") as! HomeVC
-//            vc.modalTransitionStyle = .crossDissolve
-//            vc.modalPresentationStyle = .fullScreen
-//            self.present(vc, animated: true)
-//        }
-    
-
     private func setupAnimations(){
        
         animationView.frame = CGRect(x: 0, y: 0, width: view.frame.width , height: 400)

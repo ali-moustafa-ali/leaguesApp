@@ -58,12 +58,12 @@ extension leaguesViewController: UITableViewDataSource, UITableViewDelegate{
         let string = leagues?.league_logo
         let predicate = NSPredicate(format:"SELF ENDSWITH[c] %@", ".png")
         let result = predicate.evaluate(with: string)
-//        print(result) // true
+        //        print(result) // true
         
         //MARK: - kingfisher
         if result{
             let url = URL(string: (leagues?.league_logo)!)
-             cell.leaguesImage.kf.setImage(with: url)
+            cell.leaguesImage.kf.setImage(with: url)
             
         }else
         {
@@ -83,7 +83,7 @@ extension leaguesViewController: UITableViewDataSource, UITableViewDelegate{
             
             
         }
-       
+        
         //MARK: - make the cell look round
         cell.leaguesView.layer.cornerRadius = cell.contentView.frame.height / 2.5
         //make the image look round
@@ -97,73 +97,94 @@ extension leaguesViewController: UITableViewDataSource, UITableViewDelegate{
         return 100
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        // This method is called when a row is selected in the table view
+        
+        let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
+        
+        switch sportType {
+        case "football":
+            storyBoard.sportType = "football"
+        case "basketball":
+            storyBoard.sportType = "basketball"
+        case "cricket":
+            storyBoard.sportType = "cricket"
+        case "tennis":
+            storyBoard.sportType = "tennis"
+        default:
+            break
+        }
+        
+        self.navigationController?.pushViewController(storyBoard, animated: true)
+    }
+    
 }
-
 //fetch the data
 extension leaguesViewController{
     //MARK: - Alamofire
     func fetchData(compilation: @escaping (LeaguesResponse?) -> Void)
     {
-            
-            let baseURL = "https://apiv2.allsportsapi.com"
-            let apiKey = "ed1c5c7c52b5fe5d2d9330d77e933c2718b6f8399bc960f0d2be45c42f016d9c"
-            let metParam = "Leagues"
-            let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)"
-          
         
-            AF.request(urlString).response
+        let baseURL = "https://apiv2.allsportsapi.com"
+        let apiKey = "ed1c5c7c52b5fe5d2d9330d77e933c2718b6f8399bc960f0d2be45c42f016d9c"
+        let metParam = "Leagues"
+        let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)"
+        
+        
+        AF.request(urlString).response
         { response in
-                if let data = response.data {
-                    do{
-                        let result = try JSONDecoder().decode(LeaguesResponse.self, from: data)
-                        compilation(result)
-                    }
-                    catch{
-                        compilation(nil)
-                    }
-                } else {
+            if let data = response.data {
+                do{
+                    let result = try JSONDecoder().decode(LeaguesResponse.self, from: data)
+                    compilation(result)
+                }
+                catch{
                     compilation(nil)
                 }
+            } else {
+                compilation(nil)
             }
         }
-
-//MARK: - URLSession
+    }
+    
+    //MARK: - URLSession
     /*
      func fetchData(compilation:@escaping (LeaguesResponse?)->Void){
-         
-         let baseURL = "https://apiv2.allsportsapi.com"
-         let apiKey = "ed1c5c7c52b5fe5d2d9330d77e933c2718b6f8399bc960f0d2be45c42f016d9c"
-         let metParam = "Leagues"
-         let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)"
-
-       
-         
-         guard let url = URL(string: urlString) else {
-             print("Invalid URL")
-             return
-         }
-         
-         
- //        URLSession
-         let req = URLRequest(url: url)
-         let session = URLSession(configuration: URLSessionConfiguration.default)
-         let task =  session.dataTask(with: req) { Data, URLResponse, Error in
-            
-             //code
-      
-             do{
-                 let result = try JSONDecoder().decode(LeaguesResponse.self, from: Data!)
-                 
-                 
-                 compilation(result)
-             }
-             catch{
-                 compilation(nil)
-             }
-             
-         }
-         
-         task.resume()
+     
+     let baseURL = "https://apiv2.allsportsapi.com"
+     let apiKey = "ed1c5c7c52b5fe5d2d9330d77e933c2718b6f8399bc960f0d2be45c42f016d9c"
+     let metParam = "Leagues"
+     let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)"
+     
+     
+     
+     guard let url = URL(string: urlString) else {
+     print("Invalid URL")
+     return
+     }
+     
+     
+     //        URLSession
+     let req = URLRequest(url: url)
+     let session = URLSession(configuration: URLSessionConfiguration.default)
+     let task =  session.dataTask(with: req) { Data, URLResponse, Error in
+     
+     //code
+     
+     do{
+     let result = try JSONDecoder().decode(LeaguesResponse.self, from: Data!)
+     
+     
+     compilation(result)
+     }
+     catch{
+     compilation(nil)
+     }
+     
+     }
+     
+     task.resume()
      }
      */
     

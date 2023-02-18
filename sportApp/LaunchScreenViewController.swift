@@ -15,7 +15,7 @@ class LaunchScreenViewController: UIViewController {
         super.viewDidLoad()
         setupAnimations()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                let vc = self.storyboard?.instantiateViewController(identifier: "NavigationController") as! NavigationController
                         vc.modalTransitionStyle = .crossDissolve
                         vc.modalPresentationStyle = .fullScreen

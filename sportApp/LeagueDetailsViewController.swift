@@ -16,9 +16,9 @@ class LeagueDetailsViewController: UIViewController
     
    
     //variable to response data
-    var data : DetailsResponse?
+    var dataDetails : DetailsResponse?
     var arrayOfTeams = [teamss]()
-    var sportType = ""
+    var sportType = "football"
     @IBOutlet weak var TeamsCollection: UICollectionView!
     override func viewDidLoad()
     {
@@ -37,7 +37,7 @@ class LeagueDetailsViewController: UIViewController
         //fetch data
         fetchData { result in
             DispatchQueue.main.async {
-                self.data = result
+                self.dataDetails = result
                 self.TeamsCollection.reloadData()
             }
         }
@@ -52,13 +52,19 @@ class LeagueDetailsViewController: UIViewController
 {
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            arrayOfTeams.count
+            dataDetails?.result.count ?? 0
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = TeamsCollection.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCellCollectionViewCell
-            let team = arrayOfTeams[indexPath.row]
-            cell.setupCellforteams(photo: team.photo)
+            let team = dataDetails?.result[indexPath.row]
+//            cell.setupCellforteams(photo: team.photo)
+            
+            
+            
+            
+            let url = URL(string: (team?.home_team_logo) ?? "https://goplexe.org/wp-content/uploads/2020/04/placeholder-1.png")
+            cell.teamImage.kf.setImage(with: url)
             cell.backgroundColor = UIColor .red
             return cell
             

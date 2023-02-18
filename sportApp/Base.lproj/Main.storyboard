@@ -238,18 +238,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dtH-pT-UvZ">
-                                <rect key="frame" x="76" y="201" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-vO-OK2">
+                                <rect key="frame" x="0.0" y="168" width="393" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="0hN-lL-nYR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WTe-RJ-ATX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WTe-RJ-ATX" firstAttribute="trailing" secondItem="k3N-vO-OK2" secondAttribute="trailing" id="GQL-Ld-mhK"/>
+                            <constraint firstItem="k3N-vO-OK2" firstAttribute="top" secondItem="WTe-RJ-ATX" secondAttribute="top" constant="109" id="JLI-zC-u4S"/>
+                            <constraint firstItem="k3N-vO-OK2" firstAttribute="leading" secondItem="WTe-RJ-ATX" secondAttribute="leading" id="rUy-q0-stq"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="teamName" destination="k3N-vO-OK2" id="qst-Vs-Mpn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb7-J4-GRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3533" y="31"/>
+            <point key="canvasLocation" x="3532.06106870229" y="30.985915492957748"/>
         </scene>
         <!--Launch Screen View Controller-->
         <scene sceneID="EGx-S3-2Sf">

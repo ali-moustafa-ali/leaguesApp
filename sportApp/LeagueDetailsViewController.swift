@@ -89,7 +89,22 @@ extension LeagueDetailsViewController :UICollectionViewDataSource, UICollectionV
             let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
         let team = dataDetails?.result[indexPath.row]
         let homeTeamKey = team?.home_team_key ?? 0
-        storyBoard.teamKey = String(homeTeamKey)
+        storyBoard.teamKey = String(homeTeamKey) 
+        
+        switch sportType {
+        case "football":
+            storyBoard.sportType = "football"
+        case "basketball":
+            storyBoard.sportType = "basketball"
+        case "cricket":
+            storyBoard.sportType = "cricket"
+        case "tennis":
+            storyBoard.sportType = "tennis"
+        default:
+            break
+        }
+        
+        
             self.navigationController?.pushViewController(storyBoard, animated: true)
        
     }
@@ -136,9 +151,9 @@ extension LeagueDetailsViewController{
     
 }
 
-struct teamss{
-    let photo:UIImage
-}
+//struct teamss{
+//    let photo:UIImage
+//}
 
 
 

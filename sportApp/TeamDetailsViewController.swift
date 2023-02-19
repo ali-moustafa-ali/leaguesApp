@@ -27,9 +27,7 @@ class TeamDetailsViewController: UIViewController {
         //
        
     }
-    
-    
-    
+  
 }
 
 //MARK: - fetch the data for teams

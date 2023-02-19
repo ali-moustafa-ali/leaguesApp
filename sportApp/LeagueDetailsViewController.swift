@@ -17,23 +17,14 @@ class LeagueDetailsViewController: UIViewController
     
     //variable to response data
     var dataDetails : DetailsResponse?
-//    var arrayOfTeams = [teamss]()
     var sportType = ""
     @IBOutlet weak var TeamsCollection: UICollectionView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        
-        
-        
-        TeamsCollection.dataSource = self
+     TeamsCollection.dataSource = self
         TeamsCollection.delegate = self
-//        arrayOfTeams.append(teamss(photo: UIImage(named: "1")!))
-//        arrayOfTeams.append(teamss(photo: UIImage(named: "1")!))
-//        arrayOfTeams.append(teamss(photo: UIImage(named: "1")!))
-//        arrayOfTeams.append(teamss(photo: UIImage(named: "1")!))
-//
+
         //fetch data
         fetchData { result in
             DispatchQueue.main.async {
@@ -56,6 +47,7 @@ extension LeagueDetailsViewController :UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = TeamsCollection.dequeueReusableCell(withReuseIdentifier: "teamsCell", for: indexPath) as! TeamsCellCollectionViewCell
         let team = dataDetails?.result[indexPath.row]
         
@@ -126,8 +118,8 @@ extension LeagueDetailsViewController{
         let baseURL = "https://apiv2.allsportsapi.com"
         let apiKey = "ed1c5c7c52b5fe5d2d9330d77e933c2718b6f8399bc960f0d2be45c42f016d9c"
         let metParam = "Fixtures"
-        let date = "&from=2022-05-18&to=2022-05-18"
-//        let date = "&from=2021-05-18&to=2021-05-18"
+//        let date = "&from=2022-05-18&to=2022-05-18"
+        let date = "&from=2023-02-17&to=2023-02-17"
         let urlString = "\(baseURL)/\(sportType)/?met=\(metParam)&APIkey=\(apiKey)\(date)"
         
         
@@ -151,9 +143,7 @@ extension LeagueDetailsViewController{
     
 }
 
-//struct teamss{
-//    let photo:UIImage
-//}
+
 
 
 

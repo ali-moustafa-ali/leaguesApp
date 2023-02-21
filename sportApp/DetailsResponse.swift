@@ -19,6 +19,7 @@ class Results:Decodable{
     var away_team_logo:String?//teams
     var event_home_team_logo:String?//basketball
     var event_first_player_logo:String?//tennis
+    var first_player_key: Int?//tennis
 
 }
 

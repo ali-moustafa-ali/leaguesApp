@@ -80,18 +80,34 @@ extension LeagueDetailsViewController :UICollectionViewDataSource, UICollectionV
           
             let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
         let team = dataDetails?.result[indexPath.row]
-        let homeTeamKey = team?.home_team_key ?? 0
-        storyBoard.teamKey = String(homeTeamKey) 
-        
+
+
         switch sportType {
         case "football":
             storyBoard.sportType = "football"
+            storyBoard.Id = "Teams&teamId="
+            //        for football - basketball - cricket
+                    let homeTeamKey = team?.home_team_key ?? 0
+                    storyBoard.teamKey = String(homeTeamKey)
         case "basketball":
             storyBoard.sportType = "basketball"
+            storyBoard.Id = "Teams&teamId="
+            //        for football - basketball - cricket
+                    let homeTeamKey = team?.home_team_key ?? 0
+                    storyBoard.teamKey = String(homeTeamKey)
         case "cricket":
             storyBoard.sportType = "cricket"
+            storyBoard.Id = "Teams&teamId="
+            //        for football - basketball - cricket
+                    let homeTeamKey = team?.home_team_key ?? 0
+                    storyBoard.teamKey = String(homeTeamKey)
         case "tennis":
             storyBoard.sportType = "tennis"
+            storyBoard.Id = "Players&playerId="
+            //        for tennis
+                    let firstPlayerKey = team?.first_player_key ?? 0
+                    storyBoard.teamKey = String(firstPlayerKey)
+                    
         default:
             break
         }

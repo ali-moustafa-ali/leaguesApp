@@ -7,21 +7,36 @@
 
 import Foundation
 
-class TeamResult:Decodable{
-    var team_name:String?//football - basketball - cricket
-    var team_logo:String?//football - basketball - cricket
-    var player_name:String?//tennis
-    var player_logo:String?//tennis
-   
-
-}
-
-
 class TeamResponse:Decodable{
     
     var success:Int?
     var result:[TeamResult]
 }
+
+class TeamResult:Decodable{
+    var team_name:String?//football - basketball - cricket
+    var team_logo:String?//football - basketball - cricket
+    var player_name:String?//tennis
+    var player_logo:String?//tennis
+//    var players:[player]
+   
+
+}
+
+//class player:Decodable{
+//    var player_key: String
+//    var player_name: String
+//    var player_number: String
+//    var player_country: String
+//    var player_type: String
+//    var player_age: String
+//    var player_match_playedy: String
+//    var player_goals: String
+//    var player_yellow_cards: String
+//    var player_red_cards: String
+//}
+
+
 
 
 
